@@ -32,6 +32,19 @@ resource "deis_application" "hello_world" {
 }
 ```
 
+#### Argument Reference
+
+The following arguments are supported:
+
+* `name` - (Required) The name of the application. In Deis, this also acts as the unique id.
+
+#### Attributes Reference
+
+The following attributes are exported:
+
+* `id` - The id of the application. In Deis, this also acts as the application name.
+* `name` - The name of the application. In Deis, this also acts as the unique id.
+
 ### Domains
 This is resource corresponds to an application domain on Deis.
 
