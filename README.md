@@ -44,6 +44,7 @@ The following attributes are exported:
 
 * `id` - The id of the application. In Deis, this also acts as the application name.
 * `name` - The name of the application. In Deis, this also acts as the unique id.
+* `hostname` - A hostname for the Deis application, suitable for pointing DNS records.
 
 ### Domains
 This is resource corresponds to an application domain on Deis.

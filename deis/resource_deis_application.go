@@ -21,6 +21,10 @@ func resourceDeisApplication() *schema.Resource {
 				Type:     schema.TypeString,
 				Required: true,
 			},
+			"hostname": &schema.Schema{
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 		},
 	}
 }
@@ -73,6 +77,7 @@ func resourceDeisApplicationRead(d *schema.ResourceData, meta interface{}) error
 	}
 
 	d.Set("name", application.ID)
+	d.Set("deis_hostname", application.URL)
 
 	return nil
 }
