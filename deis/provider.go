@@ -30,6 +30,7 @@ func Provider() terraform.ResourceProvider {
 
 		ResourcesMap: map[string]*schema.Resource{
 			"deis_application": resourceDeisApplication(),
+			"deis_domain":      resourceDeisDomain(),
 		},
 
 		ConfigureFunc: providerConfigure,
