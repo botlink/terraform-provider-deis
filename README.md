@@ -23,7 +23,6 @@ provider "deis" {
 }
 ```
 
-
 ### Applications
 This is resource corresponds to an application on Deis.
 
@@ -36,12 +35,28 @@ resource "deis_application" "hello_world" {
 ### Domains
 This is resource corresponds to an application domain on Deis.
 
+#### Example Usage
 ```hcl
+# Creates a new Deis domain associated with an application
 resource "deis_domain" "hello_dot_com" {
   appID = "${deis_application.hello_world.id}"
   fqdn = "hello.com"
 }
 ```
+#### Argument Reference
+
+The following arguments are supported:
+
+* `appID` - (Required) The id/name of the application.
+* `fqdn` - (Required) The fully qualified domain name of the application, e.g. `hello.com`.
+
+#### Attributes Reference
+
+The following attributes are exported:
+
+* `id` - The fully qualified domain name of the application, e.g. `hello.com`.
+* `appID` - The id/name of the application.
+* `fqdn` - The fully qualified domain name of the application, e.g. `hello.com`.
 
 ### API Compatibility
 This plugin was written against Deis API v1.7.
