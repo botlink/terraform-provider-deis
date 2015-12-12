@@ -42,3 +42,6 @@ resource "deis_domain" "hello_dot_com" {
   fqdn = "hello.com"
 }
 ```
+
+### API Compatibility
+This plugin was written against Deis API v1.7.
