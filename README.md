@@ -29,6 +29,10 @@ This is resource corresponds to an application on Deis.
 ```hcl
 resource "deis_application" "hello_world" {
   name = "hello_world"
+
+  config_vars {
+    API_ENDPOINT = "https://api.hello.com"
+  }
 }
 ```
 
@@ -37,6 +41,7 @@ resource "deis_application" "hello_world" {
 The following arguments are supported:
 
 * `name` - (Required) The name of the application. In Deis, this also acts as the unique id.
+* `config_vars` - (Optional) These are configuration variables for your application.
 
 #### Attributes Reference
 
@@ -45,6 +50,9 @@ The following attributes are exported:
 * `id` - The id of the application. In Deis, this also acts as the application name.
 * `name` - The name of the application. In Deis, this also acts as the unique id.
 * `hostname` - A hostname for the Deis application, suitable for pointing DNS records.
+* `config_vars` - These are the configuration variables for your application.
+
+**Note** - If you don't specify a config variable, then Terraform won't know about it. This is on the wish list so feel free to make a pull request if you want.
 
 ### Domains
 This is resource corresponds to an application domain on Deis.
