@@ -1,6 +1,8 @@
 # terraform-provider-deis
 A Terraform plugin to manage Deis applications.
 
+Please see our [Github Releases](https://github.com/botlink/terraform-provider-deis/releases) page to find the latest compiled binary.
+
 ## Resources
 In order to use this plugin, make sure you set up the proper configuration.
 
