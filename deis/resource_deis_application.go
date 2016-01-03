@@ -136,7 +136,7 @@ func resourceDeisApplicationRead(d *schema.ResourceData, meta interface{}) error
 
 	d.Set("name", application.ID)
 	d.Set("config_vars", configVarsValue)
-	d.Set("deis_hostname", application.URL)
+	d.Set("hostname", application.URL)
 
 	return nil
 }
